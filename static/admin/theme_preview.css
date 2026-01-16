@@ -1,0 +1,14 @@
+.theme-preview-box {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    background: var(--bg);
+    color: var(--primary);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.theme-preview-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}

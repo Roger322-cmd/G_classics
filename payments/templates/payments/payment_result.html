@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+{% block title %}Payment{% endblock %}
+{% block content %}
+<div class="card-glass p-4 text-center">
+  {% if status == "success" %}
+    <h1 class="h4 text-light mb-2">Payment successful</h1>
+    <p class="text-secondary">Thank you for your purchase.</p>
+  {% elif status == "failed" %}
+    <h1 class="h4 text-light mb-2">Payment failed</h1>
+    <p class="text-secondary">Please try again or contact support.</p>
+  {% else %}
+    <h1 class="h4 text-light mb-2">Payment pending</h1>
+    <p class="text-secondary">We are waiting for confirmation.</p>
+  {% endif %}
+</div>
+{% endblock %}

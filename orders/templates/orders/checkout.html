@@ -1,0 +1,24 @@
+{% extends "core/base.html" %}
+{% block title %}Checkout{% endblock %}
+{% block content %}
+<h1 class="h4 text-light mb-3">Checkout</h1>
+<div class="card-glass p-3 mb-3">
+  <ul class="list-unstyled mb-0">
+    {% for item in cart.items.all %}
+      <li class="d-flex justify-content-between">
+        <span>{{ item.variant.product.name }} x {{ item.quantity }}</span>
+        <span>Ksh {{ item.subtotal }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+  <hr>
+  <div class="d-flex justify-content-between">
+    <strong class="text-light">Total</strong>
+    <strong class="text-light">Ksh {{ cart.total_price }}</strong>
+  </div>
+</div>
+<form method="post">
+  {% csrf_token %}
+  <button class="btn btn-primary">Place order</button>
+</form>
+{% endblock %}

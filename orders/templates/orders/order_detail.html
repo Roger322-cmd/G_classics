@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+{% block title %}Order {{ order.transaction_id }}{% endblock %}
+{% block content %}
+<h1 class="h4 text-light mb-3">Order {{ order.transaction_id }}</h1>
+<div class="card-glass p-3">
+  <p class="text-secondary mb-1">Status: {{ order.get_status_display }}</p>
+  <p class="text-secondary mb-3">Total: Ksh {{ order.total_amount }}</p>
+  <ul class="list-unstyled">
+    {% for item in order.items.all %}
+      <li class="d-flex justify-content-between">
+        <span>{{ item.variant.product.name }} x {{ item.quantity }}</span>
+        <span>Ksh {{ item.subtotal }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
