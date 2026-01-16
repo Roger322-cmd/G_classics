@@ -23,4 +23,4 @@ class Profile(models.Model):
     avatar = models.ImageField(upload_to="avatars/", blank=True, null=True)
 
     def __str__(self):
-        return f"Profile of {self.user.email}"
+        return f"Profile {self.id}"

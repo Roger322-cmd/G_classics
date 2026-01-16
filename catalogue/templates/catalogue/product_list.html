@@ -4,6 +4,9 @@
 <div class="row mb-3">
   <div class="col-12 d-flex justify-content-between align-items-center">
     <h1 class="h4 text-light">All Products</h1>
+    {% if products.paginator.count %}
+      <span class="badge bg-secondary">{{ products.paginator.count }} products</span>
+    {% endif %}
   </div>
 </div>
 
@@ -16,4 +19,6 @@
     <p class="text-secondary">No products found.</p>
   {% endfor %}
 </div>
+
+{% include "catalogue/includes/pagination.html" with page_obj=products %}
 {% endblock %}

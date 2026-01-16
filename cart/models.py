@@ -11,7 +11,7 @@ class Cart(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"Cart of {self.user.email}"
+        return f"Cart {self.id}"
 
     @property
     def total_items(self):

@@ -50,7 +50,7 @@ class ProductVariant(models.Model):
     stock = models.PositiveIntegerField(default=0)
 
     def __str__(self):
-        return f"{self.product.name} - {self.name}"
+        return f"{self.sku}"
 
     @property
     def final_price(self):

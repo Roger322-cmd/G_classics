@@ -1,0 +1,48 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Search Results - {{ query }}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+  <div class="col-12">
+    <h1 class="h3 text-light mb-3">
+      {% if query %}
+        Search Results for "<span class="text-warning">{{ query }}</span>"
+      {% else %}
+        All Products
+      {% endif %}
+    </h1>
+    {% if products.paginator.count %}
+      <p class="text-secondary">Found <strong>{{ products.paginator.count }}</strong> product{{ products.paginator.count|pluralize }}</p>
+    {% endif %}
+  </div>
+</div>
+
+{% if products %}
+  <div class="row g-4">
+    {% for product in products %}
+      <div class="col-6 col-md-3">
+        {% include "catalogue/includes/product_card.html" with product=product %}
+      </div>
+    {% endfor %}
+  </div>
+  
+  {% include "catalogue/includes/pagination.html" with page_obj=products %}
+{% else %}
+  <div class="card-glass p-5 text-center">
+    <i class="bi bi-search fs-1 text-muted mb-3" style="display: block;"></i>
+    <h3 class="text-light mb-2">No products found</h3>
+    <p class="text-secondary mb-4">
+      {% if query %}
+        We couldn't find any products matching "<strong>{{ query }}</strong>". Try a different search term.
+      {% else %}
+        No products available at the moment.
+      {% endif %}
+    </p>
+    <a href="{% url 'catalogue:product_list' %}" class="btn btn-primary">
+      <i class="bi bi-arrow-left"></i> Back to Shop
+    </a>
+  </div>
+{% endif %}
+{% endblock %}
