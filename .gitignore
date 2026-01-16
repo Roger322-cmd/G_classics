@@ -1,0 +1,202 @@
+# ============================================================================
+# ENVIRONMENT & SECRETS
+# ============================================================================
+
+# Environment variables (NEVER commit this!)
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+.env.development
+
+# ============================================================================
+# PYTHON & PIP
+# ============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# ============================================================================
+# IDE & EDITOR
+# ============================================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+.history/
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+.vim/
+.swp
+.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ============================================================================
+# DJANGO SPECIFIC
+# ============================================================================
+
+# Database
+db.sqlite3
+db.sqlite3-journal
+*.db
+*.sqlite
+*.sqlite3
+
+# Media & Static Files (in development)
+media/
+staticfiles/
+/static/
+
+# Logs
+logs/
+*.log
+
+# Django migrations (optional - uncomment if you want to version control them)
+# **/migrations/*.py
+# !**/migrations/__init__.py
+
+# Django collect static output
+/static_root/
+
+# Secret key files
+secret_key.txt
+
+# ============================================================================
+# OS SPECIFIC
+# ============================================================================
+
+# macOS
+.DS_Store
+
+# Linux
+.directory
+
+# ============================================================================
+# PROJECT SPECIFIC
+# ============================================================================
+
+# Local test data
+test_data/
+temp/
+tmp/
+
+# Node/NPM (if using any frontend tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Docker
+docker-compose.override.yml
+
+# IDE temp files
+*.tmp
+*.bak
+*.swp
+
+# ============================================================================
+# SECURITY - SENSITIVE FILES
+# ============================================================================
+
+# API Keys and credentials
+*_key.txt
+*_secret.txt
+credentials.json
+config/secrets.yml
+
+# Certificate files
+*.pem
+*.key
+*.cert
+*.crt
+
+# ============================================================================
+# CUSTOM
+# ============================================================================
+
+# Add your custom ignore rules here
+.local/
+.cache/
+*.pyc
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
